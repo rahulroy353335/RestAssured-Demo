@@ -1,0 +1,16 @@
+com\roy\api\models\User$Company$CompanyBuilder.class
+com\roy\api\utils\JsonDataReader.class
+com\roy\api\models\User$Address.class
+com\roy\reporting\ExtentManager.class
+com\roy\api\models\User$Address$Geo$GeoBuilder.class
+com\roy\api\clients\UserClient.class
+com\roy\api\models\User$Company.class
+com\roy\api\models\User$Address$AddressBuilder.class
+com\roy\api\models\User$UserBuilder.class
+com\roy\listeners\TestListener.class
+com\roy\api\models\User$Address$Geo.class
+com\roy\config\ConfigReader.class
+com\roy\api\utils\JsonDataReader$1.class
+com\roy\base\BaseTest.class
+com\roy\api\tests\APITests.class
+com\roy\api\models\User.class

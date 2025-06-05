@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Selenium and REST Assured Tests">
+    <test name="API Tests">
+        <classes>
+            <class name="com.roy.api.tests.APITests"/>
+            <class name="com.roy.api.tests.APITestPojo"/>
+        </classes>
+    </test>
+</suite>

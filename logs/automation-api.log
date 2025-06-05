@@ -1,0 +1,165 @@
+2025-06-04 17:25:17.927 [main] INFO  com.roy.listeners.TestListener - =========== STARTING TEST SUITE: API Tests ===========
+2025-06-04 17:25:17.957 [main] INFO  com.roy.base.BaseTest - Starting test: testGetUser
+2025-06-04 17:25:17.958 [main] INFO  com.roy.listeners.TestListener - ===================================================================
+2025-06-04 17:25:17.959 [main] INFO  com.roy.listeners.TestListener - Starting Test: testGetUser
+2025-06-04 17:25:17.959 [main] INFO  com.roy.listeners.TestListener - Test Description: 
+2025-06-04 17:25:17.959 [main] INFO  com.roy.listeners.TestListener - Test Parameters: No parameters
+2025-06-04 17:25:17.962 [main] INFO  com.roy.listeners.TestListener - ===================================================================
+2025-06-04 17:25:17.969 [main] INFO  com.roy.base.BaseTest - Starting API test for GET /users?page=2
+2025-06-04 17:25:19.571 [main] INFO  com.roy.listeners.TestListener - Test PASSED: testGetUser
+2025-06-04 17:25:19.572 [main] INFO  com.roy.base.BaseTest - Test Passed
+2025-06-04 17:25:19.938 [main] INFO  com.roy.listeners.TestListener - =========== FINISHED TEST SUITE: API Tests ===========
+2025-06-04 17:25:19.939 [main] INFO  com.roy.listeners.TestListener - Passed Tests: 1
+2025-06-04 17:25:19.939 [main] INFO  com.roy.listeners.TestListener - Failed Tests: 0
+2025-06-04 17:25:19.939 [main] INFO  com.roy.listeners.TestListener - Skipped Tests: 0
+2025-06-04 18:12:25.506 [main] INFO  com.roy.listeners.TestListener - =========== STARTING TEST SUITE: API Tests ===========
+2025-06-04 18:12:25.538 [main] INFO  com.roy.base.BaseTest - Starting test: testGetUser
+2025-06-04 18:12:25.540 [main] INFO  com.roy.listeners.TestListener - ===================================================================
+2025-06-04 18:12:25.540 [main] INFO  com.roy.listeners.TestListener - Starting Test: testGetUser
+2025-06-04 18:12:25.540 [main] INFO  com.roy.listeners.TestListener - Test Description: 
+2025-06-04 18:12:25.541 [main] INFO  com.roy.listeners.TestListener - Test Parameters: No parameters
+2025-06-04 18:12:25.541 [main] INFO  com.roy.listeners.TestListener - ===================================================================
+2025-06-04 18:12:25.547 [main] INFO  com.roy.base.BaseTest - Starting API test for GET /users?page=2
+2025-06-04 18:12:27.131 [main] INFO  com.roy.listeners.TestListener - Test PASSED: testGetUser
+2025-06-04 18:12:27.133 [main] INFO  com.roy.base.BaseTest - Test Passed
+2025-06-04 18:12:27.541 [main] INFO  com.roy.listeners.TestListener - =========== FINISHED TEST SUITE: API Tests ===========
+2025-06-04 18:12:27.542 [main] INFO  com.roy.listeners.TestListener - Passed Tests: 1
+2025-06-04 18:12:27.543 [main] INFO  com.roy.listeners.TestListener - Failed Tests: 0
+2025-06-04 18:12:27.543 [main] INFO  com.roy.listeners.TestListener - Skipped Tests: 0
+2025-06-04 20:32:53.872 [main] INFO  com.roy.listeners.TestListener - =========== STARTING TEST SUITE: API Tests ===========
+2025-06-04 20:32:53.900 [main] INFO  com.roy.base.BaseTest - Starting test: testGetUser
+2025-06-04 20:32:53.902 [main] INFO  com.roy.listeners.TestListener - ===================================================================
+2025-06-04 20:32:53.902 [main] INFO  com.roy.listeners.TestListener - Starting Test: testGetUser
+2025-06-04 20:32:53.902 [main] INFO  com.roy.listeners.TestListener - Test Description: 
+2025-06-04 20:32:53.902 [main] INFO  com.roy.listeners.TestListener - Test Parameters: No parameters
+2025-06-04 20:32:53.902 [main] INFO  com.roy.listeners.TestListener - ===================================================================
+2025-06-04 20:32:53.908 [main] INFO  com.roy.base.BaseTest - Starting API test for GET /users?page=2
+2025-06-04 20:32:55.261 [main] INFO  com.roy.listeners.TestListener - Test PASSED: testGetUser
+2025-06-04 20:32:55.263 [main] INFO  com.roy.base.BaseTest - Test Passed
+2025-06-04 20:32:55.268 [main] INFO  com.roy.base.BaseTest - Starting test: testCreateUser
+2025-06-04 20:32:55.269 [main] INFO  com.roy.listeners.TestListener - ===================================================================
+2025-06-04 20:32:55.269 [main] INFO  com.roy.listeners.TestListener - Starting Test: testCreateUser
+2025-06-04 20:32:55.269 [main] INFO  com.roy.listeners.TestListener - Test Description: 
+2025-06-04 20:32:55.269 [main] INFO  com.roy.listeners.TestListener - Test Parameters: No parameters
+2025-06-04 20:32:55.270 [main] INFO  com.roy.listeners.TestListener - ===================================================================
+2025-06-04 20:32:55.274 [main] INFO  com.roy.api.tests.APITestPojo - Request payload: com.roy.api.pojo.ReqResPost@1e3f0aea
+2025-06-04 20:32:56.155 [main] ERROR com.roy.listeners.TestListener - Test FAILED: testCreateUser
+java.lang.AssertionError: 1 expectation failed.
+Expected status code <201> but was <401>.
+
+	at jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73) ~[groovy-4.0.6.jar:4.0.6]
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108) ~[groovy-4.0.6.jar:4.0.6]
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57) ~[groovy-4.0.6.jar:4.0.6]
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263) ~[groovy-4.0.6.jar:4.0.6]
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277) ~[groovy-4.0.6.jar:4.0.6]
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512) ~[rest-assured-5.3.0.jar:?]
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source) ~[?:?]
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45) ~[groovy-4.0.6.jar:4.0.6]
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125) ~[groovy-4.0.6.jar:4.0.6]
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139) ~[groovy-4.0.6.jar:4.0.6]
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696) ~[rest-assured-5.3.0.jar:?]
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy) ~[rest-assured-5.3.0.jar:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43) ~[groovy-4.0.6.jar:4.0.6]
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198) ~[groovy-4.0.6.jar:4.0.6]
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62) ~[groovy-4.0.6.jar:4.0.6]
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:49) ~[groovy-4.0.6.jar:4.0.6]
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171) ~[groovy-4.0.6.jar:4.0.6]
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185) ~[groovy-4.0.6.jar:4.0.6]
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135) ~[rest-assured-5.3.0.jar:?]
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source) ~[?:?]
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:49) ~[groovy-4.0.6.jar:4.0.6]
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171) ~[groovy-4.0.6.jar:4.0.6]
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185) ~[groovy-4.0.6.jar:4.0.6]
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143) ~[rest-assured-5.3.0.jar:?]
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89) ~[rest-assured-5.3.0.jar:?]
+	at com.roy.api.tests.APITestPojo.testCreateUser(APITestPojo.java:37) ~[test-classes/:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139) ~[testng-7.7.1.jar:7.7.1]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677) ~[testng-7.7.1.jar:7.7.1]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221) ~[testng-7.7.1.jar:7.7.1]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50) ~[testng-7.7.1.jar:7.7.1]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969) ~[testng-7.7.1.jar:7.7.1]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194) ~[testng-7.7.1.jar:7.7.1]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148) ~[testng-7.7.1.jar:7.7.1]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128) ~[testng-7.7.1.jar:7.7.1]
+	at java.util.ArrayList.forEach(ArrayList.java:1596) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:829) [testng-7.7.1.jar:7.7.1]
+	at org.testng.TestRunner.run(TestRunner.java:602) [testng-7.7.1.jar:7.7.1]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437) [testng-7.7.1.jar:7.7.1]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431) [testng-7.7.1.jar:7.7.1]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391) [testng-7.7.1.jar:7.7.1]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330) [testng-7.7.1.jar:7.7.1]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.7.1.jar:7.7.1]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.7.1.jar:7.7.1]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256) [testng-7.7.1.jar:7.7.1]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176) [testng-7.7.1.jar:7.7.1]
+	at org.testng.TestNG.runSuites(TestNG.java:1099) [testng-7.7.1.jar:7.7.1]
+	at org.testng.TestNG.run(TestNG.java:1067) [testng-7.7.1.jar:7.7.1]
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308) [surefire-testng-3.1.2.jar:3.1.2]
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71) [surefire-testng-3.1.2.jar:3.1.2]
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113) [surefire-testng-3.1.2.jar:3.1.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) [surefire-booter-3.1.2.jar:3.1.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) [surefire-booter-3.1.2.jar:3.1.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) [surefire-booter-3.1.2.jar:3.1.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) [surefire-booter-3.1.2.jar:3.1.2]
+2025-06-04 20:32:56.166 [main] ERROR com.roy.base.BaseTest - Test Failed: java.lang.AssertionError: 1 expectation failed.
+Expected status code <201> but was <401>.
+
+2025-06-04 20:32:56.468 [main] INFO  com.roy.listeners.TestListener - =========== FINISHED TEST SUITE: API Tests ===========
+2025-06-04 20:32:56.469 [main] INFO  com.roy.listeners.TestListener - Passed Tests: 1
+2025-06-04 20:32:56.469 [main] INFO  com.roy.listeners.TestListener - Failed Tests: 1
+2025-06-04 20:32:56.469 [main] INFO  com.roy.listeners.TestListener - Skipped Tests: 0
+2025-06-05 11:20:30.708 [main] INFO  com.roy.listeners.TestListener - =========== STARTING TEST SUITE: API Tests ===========
+2025-06-05 11:20:30.739 [main] INFO  com.roy.base.BaseTest - Starting test: testGetUser
+2025-06-05 11:20:30.742 [main] INFO  com.roy.listeners.TestListener - ===================================================================
+2025-06-05 11:20:30.743 [main] INFO  com.roy.listeners.TestListener - Starting Test: testGetUser
+2025-06-05 11:20:30.743 [main] INFO  com.roy.listeners.TestListener - Test Description: 
+2025-06-05 11:20:30.743 [main] INFO  com.roy.listeners.TestListener - Test Parameters: No parameters
+2025-06-05 11:20:30.743 [main] INFO  com.roy.listeners.TestListener - ===================================================================
+2025-06-05 11:20:30.748 [main] INFO  com.roy.base.BaseTest - Starting API test for GET /users?page=2
+2025-06-05 11:20:32.397 [main] INFO  com.roy.listeners.TestListener - Test PASSED: testGetUser
+2025-06-05 11:20:32.398 [main] INFO  com.roy.base.BaseTest - Test Passed
+2025-06-05 11:20:32.402 [main] INFO  com.roy.base.BaseTest - Starting test: testCreateUser
+2025-06-05 11:20:32.403 [main] INFO  com.roy.listeners.TestListener - ===================================================================
+2025-06-05 11:20:32.403 [main] INFO  com.roy.listeners.TestListener - Starting Test: testCreateUser
+2025-06-05 11:20:32.404 [main] INFO  com.roy.listeners.TestListener - Test Description: 
+2025-06-05 11:20:32.404 [main] INFO  com.roy.listeners.TestListener - Test Parameters: No parameters
+2025-06-05 11:20:32.404 [main] INFO  com.roy.listeners.TestListener - ===================================================================
+2025-06-05 11:20:32.410 [main] INFO  com.roy.api.tests.APITestPojo - Request payload: com.roy.api.pojo.ReqResPost@a85644c
+2025-06-05 11:20:33.823 [main] INFO  com.roy.api.tests.APITestPojo - Response received: com.roy.api.pojoresponse.ResponseRespost@65e620b0
+2025-06-05 11:20:33.825 [main] INFO  com.roy.listeners.TestListener - Test PASSED: testCreateUser
+2025-06-05 11:20:33.828 [main] INFO  com.roy.base.BaseTest - Test Passed
+2025-06-05 11:20:34.412 [main] INFO  com.roy.listeners.TestListener - =========== FINISHED TEST SUITE: API Tests ===========
+2025-06-05 11:20:34.413 [main] INFO  com.roy.listeners.TestListener - Passed Tests: 2
+2025-06-05 11:20:34.414 [main] INFO  com.roy.listeners.TestListener - Failed Tests: 0
+2025-06-05 11:20:34.414 [main] INFO  com.roy.listeners.TestListener - Skipped Tests: 0
+2025-06-05 11:48:54.161 [main] INFO  com.roy.listeners.TestListener - =========== STARTING TEST SUITE: API Tests ===========
+2025-06-05 11:48:54.202 [main] INFO  com.roy.base.BaseTest - Starting test: testGetUser
+2025-06-05 11:48:54.204 [main] INFO  com.roy.listeners.TestListener - ===================================================================
+2025-06-05 11:48:54.204 [main] INFO  com.roy.listeners.TestListener - Starting Test: testGetUser
+2025-06-05 11:48:54.204 [main] INFO  com.roy.listeners.TestListener - Test Description: 
+2025-06-05 11:48:54.204 [main] INFO  com.roy.listeners.TestListener - Test Parameters: No parameters
+2025-06-05 11:48:54.205 [main] INFO  com.roy.listeners.TestListener - ===================================================================
+2025-06-05 11:48:54.211 [main] INFO  com.roy.base.BaseTest - Starting API test for GET /users?page=2
+2025-06-05 11:48:55.689 [main] INFO  com.roy.listeners.TestListener - Test PASSED: testGetUser
+2025-06-05 11:48:55.691 [main] INFO  com.roy.base.BaseTest - Test Passed
+2025-06-05 11:48:55.694 [main] INFO  com.roy.base.BaseTest - Starting test: testCreateUser
+2025-06-05 11:48:55.694 [main] INFO  com.roy.listeners.TestListener - ===================================================================
+2025-06-05 11:48:55.695 [main] INFO  com.roy.listeners.TestListener - Starting Test: testCreateUser
+2025-06-05 11:48:55.695 [main] INFO  com.roy.listeners.TestListener - Test Description: 
+2025-06-05 11:48:55.695 [main] INFO  com.roy.listeners.TestListener - Test Parameters: No parameters
+2025-06-05 11:48:55.695 [main] INFO  com.roy.listeners.TestListener - ===================================================================
+2025-06-05 11:48:55.701 [main] INFO  com.roy.api.tests.APITestPojo - Request payload: com.roy.api.pojo.ReqResPost@2d7637e6
+2025-06-05 11:48:57.264 [main] INFO  com.roy.api.tests.APITestPojo - Response received: com.roy.api.pojoresponse.ResponseRespost@46702c26
+2025-06-05 11:48:57.266 [main] INFO  com.roy.listeners.TestListener - Test PASSED: testCreateUser
+2025-06-05 11:48:57.268 [main] INFO  com.roy.base.BaseTest - Test Passed
+2025-06-05 11:48:57.602 [main] INFO  com.roy.listeners.TestListener - =========== FINISHED TEST SUITE: API Tests ===========
+2025-06-05 11:48:57.603 [main] INFO  com.roy.listeners.TestListener - Passed Tests: 2
+2025-06-05 11:48:57.603 [main] INFO  com.roy.listeners.TestListener - Failed Tests: 0
+2025-06-05 11:48:57.603 [main] INFO  com.roy.listeners.TestListener - Skipped Tests: 0

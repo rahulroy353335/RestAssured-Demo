@@ -1,0 +1,21 @@
+# Use official Maven image as build image
+FROM maven:3.8.6-openjdk-11 AS build
+WORKDIR /app
+COPY pom.xml .
+RUN mvn dependency:go-offline
+COPY src /app/src
+RUN mvn package
+
+# Use official OpenJDK runtime as final image
+FROM openjdk:11-jre-slim
+WORKDIR /app
+COPY --from=build /app/target/automation-framework-1.0.0.jar /app/automation.jar
+COPY --from=build /app/test-output /app/test-output
+
+# Install TestNG to run tests
+RUN apt-get update && apt-get install -y wget unzip
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+RUN apt-get install -y ./google-chrome-stable_current_amd64.deb
+
+# Command to run tests
+ENTRYPOINT ["java", "-jar", "automation.jar"]
