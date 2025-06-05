@@ -2,7 +2,7 @@ name: Java CI/CD with Maven
 
 on:
   push:
-    branches: [ "gitactions" ]
+    branches: [ "gitactionsemail" ]
   pull_request:
     branches: [ "main" ]
 
@@ -49,7 +49,28 @@ jobs:
           target/surefire-reports/
           test-output/
         retention-days: 5
-    
+    - name: Send email with test reports
+      if: always()
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.gmail.com
+        server_port: 465
+        username: ${{ secrets.EMAIL_USERNAME }}
+        password: ${{ secrets.EMAIL_PASSWORD }}
+        subject: "Test Results - ${{ github.repository }} - ${{ github.run_id }}"
+        to: rajaroy353335@gmail.com  # Replace with your email
+        from: GitHub Actions
+        body: |
+          Test execution completed for ${{ github.repository }}
+          Run ID: ${{ github.run_id }}
+          Workflow: ${{ github.workflow }}
+          Status: ${{ job.status }}
+          
+          See attached test reports.
+        attachments: |
+          target/surefire-reports/
+          test-output/
+        content_type: text/html
     - name: Upload Extent Reports
       uses: actions/upload-artifact@v4  # Updated to v4
       if: always()
