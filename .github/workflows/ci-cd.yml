@@ -2,7 +2,7 @@ name: Java CI/CD with Maven
 
 on:
   push:
-    branches: [ "gitactionsemail" ]
+    branches: [ "gitactionsemail","gitactions" ]
   pull_request:
     branches: [ "main" ]
 
@@ -49,38 +49,6 @@ jobs:
           target/surefire-reports/
           test-output/
         retention-days: 5
-    - name: Zip test reports
-      if: always()
-      run: |
-        mkdir -p reports
-        cp -r target/surefire-reports/* reports/ || true
-        cp -r test-output/* reports/ || true
-        zip -r test-reports.zip reports/    
-    - name: Send email with test reports
-      if: always()
-      uses: dawidd6/action-send-mail@v3
-      with:
-        server_address: smtp.gmail.com
-        server_port: 465
-        username: ${{ secrets.EMAIL_USERNAME }}
-        password: ${{ secrets.EMAIL_PASSWORD }}
-        subject: "Test Results - ${{ github.repository }} - ${{ github.run_id }}"
-        to: rajaroy353335@gmail.com  # Replace with your email
-        from: GitHub Actions
-        body: |
-          Test execution completed for ${{ github.repository }}
-          Run ID: ${{ github.run_id }}
-          Workflow: ${{ github.workflow }}
-          Status: ${{ job.status }}
-          
-          See attached test reports.
-        html_body: |
-          <h1>Test Results</h1>
-          <p>Repository: ${{ github.repository }}</p>
-          <p>Run ID: ${{ github.run_id }}</p>
-          <p>Workflow: ${{ github.workflow }}</p>
-          <p>Status: <strong>${{ job.status }}</strong></p>
-        attachments: test-reports.zip
     - name: Upload Extent Reports
       uses: actions/upload-artifact@v4  # Updated to v4
       if: always()
