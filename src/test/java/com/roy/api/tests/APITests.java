@@ -52,7 +52,7 @@ public class APITests extends BaseTest {
             logger.info("Starting API test for GET /users?page=2");
             // RestAssured.baseURI = "https://reqres.in/api";
             Response response = given()
-                    .header("Content-Type", "application/json")
+                    .header("Content-Type", "application/json", "x-api-key", "reqres-free-v1")
                     .when()
                     .get("/users?page=2")
                     .then()
