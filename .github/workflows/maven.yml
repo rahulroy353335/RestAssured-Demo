@@ -22,9 +22,7 @@ jobs:
     - name: Checkout selected branch
       uses: actions/checkout@v4  # Updated to v4
       with:
-          ref: ${{ github.event.inputs.branch || github.ref }}
-    - name: Print selected branch
-      run: echo "Testing branch": ${{ github.event.inputs.branch }}"      
+          ref: ${{ inputs.branch }}          
     - name: Set up JDK 21
       uses: actions/setup-java@v4  # Updated to v4
       with:
