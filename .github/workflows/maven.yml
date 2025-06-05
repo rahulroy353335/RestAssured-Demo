@@ -1,4 +1,4 @@
-name: Java CI/CD with Maven
+name: Manual Test Runner
 
 on:
   workflow_dispatch:
@@ -12,8 +12,7 @@ on:
           - main
           - gitactionsemail
           - gitactions
-  push:
-    branches: [main]
+
 
 jobs:
   build-and-test:
@@ -24,6 +23,8 @@ jobs:
       uses: actions/checkout@v4  # Updated to v4
       with:
           ref: ${{ github.event.inputs.branch || github.ref }}
+    - name: Print selected branch
+      run: echo "Testing branch": ${{ github.event.inputs.branch }}"      
     - name: Set up JDK 21
       uses: actions/setup-java@v4  # Updated to v4
       with:
