@@ -49,6 +49,13 @@ jobs:
           target/surefire-reports/
           test-output/
         retention-days: 5
+    - name: Zip test reports
+      if: always()
+      run: |
+        mkdir -p reports
+        cp -r target/surefire-reports/* reports/ || true
+        cp -r test-output/* reports/ || true
+        zip -r test-reports.zip reports/    
     - name: Send email with test reports
       if: always()
       uses: dawidd6/action-send-mail@v3
@@ -67,10 +74,13 @@ jobs:
           Status: ${{ job.status }}
           
           See attached test reports.
-        attachments: |
-          target/surefire-reports/
-          test-output/
-        content_type: text/html
+        html_body: |
+          <h1>Test Results</h1>
+          <p>Repository: ${{ github.repository }}</p>
+          <p>Run ID: ${{ github.run_id }}</p>
+          <p>Workflow: ${{ github.workflow }}</p>
+          <p>Status: <strong>${{ job.status }}</strong></p>
+        attachments: test-reports.zip
     - name: Upload Extent Reports
       uses: actions/upload-artifact@v4  # Updated to v4
       if: always()
