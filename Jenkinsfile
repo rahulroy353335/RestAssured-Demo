@@ -49,7 +49,7 @@ pipeline {
                     """
                 }
             }
-
+        }
         stage('Reports') {
             steps {
                 sh 'mkdir -p test-output/extent-reports' // Ensure directory exists
