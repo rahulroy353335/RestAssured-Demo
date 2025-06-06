@@ -1,17 +1,13 @@
 pipeline {
     agent {
-        docker {
-            image 'maven:3.8.6-jdk-21'
-            args '-v $HOME/.m2:/root/.m2 -e MAVEN_OPTS=""'
-        }
+        label 'java21-agent' // Replace with your Jenkins agent label
     }
 
     parameters {
         choice(
             name: 'BRANCH',
             choices: ['main', 'gitactionsemail', 'gitactions'],
-            description: 'Select branch to test',
-            defaultValue: 'main'
+            description: 'Select branch to test'
         )
     }
     environment {
@@ -30,7 +26,7 @@ pipeline {
         """
         REPO_URL = 'https://github.com/rahulroy353335/RestAssured-Demo.git' // Update this
     }
-    
+
     stages {
         stage('Checkout') {
             steps {
@@ -38,31 +34,21 @@ pipeline {
                     $class: 'GitSCM',
                     branches: [[name: "${params.BRANCH}"]],
                     userRemoteConfigs: [[url: "${env.REPO_URL}"]]
-                ])
-                echo "✅ Testing branch: ${params.BRANCH}"
+                ])                
                 
             }
         }
 
-        stage('Build') {
+        stage('Build & Test') {
             steps {
-                sh 'mvn -B clean compile'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                sh """
-                mvn -B test \
-                    -DargLine=\"${env.MAVEN_OPTS}\"
-                """
-            }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
+                withEnv(["JAVA_HOME=${tool 'jdk-21'}", "PATH+JDK=${tool 'jdk-21'}/bin"]) {
+                    sh """
+                    mvn -B clean test \
+                        -Denvironment=${env.ENVIRONMENT} \
+                        -DargLine=\"${MAVEN_OPTS}\"
+                    """
                 }
             }
-        }
 
         stage('Reports') {
             steps {
@@ -76,6 +62,7 @@ pipeline {
             }
         }
     }
+    
     post {
         always {
             script {
@@ -84,7 +71,7 @@ pipeline {
                 📋 **Build Summary**
                 - Result: ${currentBuild.currentResult}
                 - Branch: ${params.BRANCH}
-                - Environment: ${params.ENVIRONMENT}
+
                 - Duration: ${currentBuild.durationString}
                 - Report: ${env.BUILD_URL}testReport/
                 - Artifacts: ${env.BUILD_URL}artifact/
