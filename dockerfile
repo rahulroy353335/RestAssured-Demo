@@ -1,5 +1,5 @@
 # Use the same Maven + JDK 21 image as in Jenkins
-FROM maven:3.8.8-eclipse-temurin-21
+FROM maven:3.9.9-eclipse-temurin-21
 
 # Set up environment variables (matching Jenkinsfile)
 ENV MAVEN_OPTS="\
@@ -21,6 +21,7 @@ ENV DISPLAY=:99
 WORKDIR /app
 
 # Copy the Maven POM first (for layer caching)
+COPY testng.xml .
 COPY pom.xml .
 
 # Download dependencies (cached unless POM changes)
