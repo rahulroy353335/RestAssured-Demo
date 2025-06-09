@@ -19,7 +19,7 @@ pipeline {
         )
     }
     environment {
-        // Lombok configuration for Java 21
+
         MAVEN_OPTS = """
             --add-opens=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED
             --add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED
@@ -32,7 +32,7 @@ pipeline {
             --add-opens=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED
             -Djava.awt.headless=true
         """
-        REPO_URL = 'https://github.com/rahulroy353335/RestAssured-Demo.git' // Update this
+        REPO_URL = 'https://github.com/rahulroy353335/RestAssured-Demo.git'
     }
 
     stages {
@@ -42,31 +42,25 @@ pipeline {
                     $class: 'GitSCM',
                     branches: [[name: "${params.BRANCH}"]],
                     userRemoteConfigs: [[url: "${env.REPO_URL}"]]
-                ])                
-                
+                ])
             }
         }
 
         stage('Build & Test') {
             steps {
-                withEnv(["JAVA_HOME=${tool 'jdk-21'}", "PATH+JDK=${tool 'jdk-21'}/bin"]) {
+                // Run tests in headless mode (Linux example)
+                withEnv(["JAVA_HOME=${tool 'jdk21'}", "PATH+JDK=${tool 'jdk21'}/bin"]) {
                     sh """
-                    mvn -B clean test \
-                        -Denvironment=${env.ENVIRONMENT} \
+                    mvn -B clean test\
                         -DargLine=\"${MAVEN_OPTS}\"
                     """
                 }
             }
         }
+
         stage('Reports') {
             steps {
-                sh 'mkdir -p test-output/extent-reports' // Ensure directory exists
-            }
-            post {
-                always {
-                    archiveArtifacts artifacts: 'test-output/extent-reports/**/*', allowEmptyArchive: true
-                    archiveArtifacts artifacts: 'target/surefire-reports/**/*', allowEmptyArchive: true
-                }
+                sh """mkdir -p test-output/extent-reports""" // Ensure directory exists
             }
         }
     }
@@ -78,8 +72,7 @@ pipeline {
                 def summary = """
                 📋 **Build Summary**
                 - Result: ${currentBuild.currentResult}
-                - Branch: ${params.BRANCH}
-
+                - Branch: ${params.BRANCH}                
                 - Duration: ${currentBuild.durationString}
                 - Report: ${env.BUILD_URL}testReport/
                 - Artifacts: ${env.BUILD_URL}artifact/
@@ -91,4 +84,4 @@ pipeline {
             }
         }
     }
-}
+}    
